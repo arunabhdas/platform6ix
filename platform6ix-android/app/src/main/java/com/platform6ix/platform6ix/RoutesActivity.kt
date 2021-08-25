@@ -3,9 +3,9 @@ package com.platform6ix.platform6ix
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class LogActivity : AppCompatActivity() {
+class RoutesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_log)
+        setContentView(R.layout.activity_routes)
     }
 }
