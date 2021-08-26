@@ -3,13 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/currentFragment">
-
-    <fragment
-        android:id="@+id/currentFragment"
-        android:name="com.platform6ix.platform6ix.fragments.current.CurrentFragment"
-        android:label="@string/title_current"
-        tools:layout="@layout/fragment_current" />
+    app:startDestination="@+id/dashboardFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -18,21 +12,27 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/currentFragment"
+        android:name="com.platform6ix.platform6ix.fragments.current.CurrentFragment"
+        android:label="@string/title_current"
+        tools:layout="@layout/fragment_current" />
+
+    <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.platform6ix.platform6ix.fragments.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/notificationsFragment"
-        android:name="com.platform6ix.platform6ix.fragments.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
-
-    <fragment
         android:id="@+id/futureListFragment"
         android:name="com.platform6ix.platform6ix.fragments.future.FutureListFragment"
         android:label="@string/title_future"
         tools:layout="@layout/fragment_future_list" />
+
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.platform6ix.platform6ix.fragments.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
 
 </navigation>
