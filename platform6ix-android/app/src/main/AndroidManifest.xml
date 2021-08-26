@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Platform6ix">
         <activity
-            android:name=".RoutesActivity"
+            android:name=".activities.DashboardActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
