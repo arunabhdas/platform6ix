@@ -10,6 +10,7 @@
         android:theme="@style/Theme.Platform6ix">
         <activity
             android:name=".activities.DashboardActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

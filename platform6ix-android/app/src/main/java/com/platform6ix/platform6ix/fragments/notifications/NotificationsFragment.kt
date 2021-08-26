@@ -25,10 +25,12 @@ class NotificationsFragment : Fragment() {
         val textView: TextView = root.findViewById(R.id.text_notifications)
         textView.text = "This is the Notifications fragment"
 
+        /* TODO-FIXME-DEBUG
         val btnLogout: Button = root.findViewById(R.id.btnLogout)
         btnLogout.setOnClickListener {
             activity?.finish()
         }
+         */
         return root
     }
 
