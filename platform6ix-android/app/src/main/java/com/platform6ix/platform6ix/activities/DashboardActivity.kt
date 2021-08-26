@@ -16,7 +16,7 @@ class DashboardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
-
+        // TODO-FIXME-DEBUG-UI setSupportActionBar(toolbar)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
         val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
@@ -34,5 +34,9 @@ class DashboardActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
 
         navView.setupWithNavController(navController)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+       return NavigationUI.navigateUp(navController, null)
     }
 }
