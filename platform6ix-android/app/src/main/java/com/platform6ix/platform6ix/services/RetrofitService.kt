@@ -18,7 +18,7 @@ const val BASE_URL = " http://api.weatherstack.com/"
 
 // http://api.weatherstack.com/current?access_key=7c0e16b199f4e835e5fbb0fe03f7319c&query=Toronto
 
-interface WeatherApiService {
+interface RetrofitService {
 
     @GET("current")
     fun getCurrentWeather(
@@ -27,7 +27,7 @@ interface WeatherApiService {
     ): Deferred<CurrentWeatherResponse>
 
     companion object {
-        operator fun invoke(): WeatherApiService {
+        operator fun invoke(): RetrofitService {
             val requestInterceptor = Interceptor { chain ->
                 val url = chain.request()
                     .url()
@@ -54,7 +54,7 @@ interface WeatherApiService {
                 .addCallAdapterFactory(CoroutineCallAdapterFactory())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(WeatherApiService::class.java)
+                .create(RetrofitService::class.java)
         }
     }
 }

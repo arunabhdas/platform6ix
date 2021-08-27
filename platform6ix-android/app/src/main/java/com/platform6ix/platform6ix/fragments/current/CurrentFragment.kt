@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.platform6ix.platform6ix.R
-import com.platform6ix.platform6ix.services.WeatherApiService
+import com.platform6ix.platform6ix.services.RetrofitService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -35,7 +35,7 @@ class CurrentFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(CurrentViewModel::class.java)
         // TODO: Use the ViewModel
-        val apiService = WeatherApiService()
+        val apiService = RetrofitService()
 
         GlobalScope.launch(Dispatchers.Main) {
             val currentWeatherResponse = apiService.getCurrentWeather("Toronto", "en").await()
