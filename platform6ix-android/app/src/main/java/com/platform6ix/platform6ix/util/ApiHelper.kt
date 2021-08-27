@@ -7,6 +7,6 @@ import com.platform6ix.platform6ix.services.WeatherService
  */
 class ApiHelper(private val weatherService: WeatherService) {
 
-    fun getCurrentWeather() = weatherService.getCurrentWeather("Miami", "en")
+    fun fetchCurrentWeather() = weatherService.getCurrentWeather("Miami", "en")
 
 }
