@@ -7,7 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.Observer
 import com.platform6ix.platform6ix.R
+import com.platform6ix.platform6ix.network.ConnectivityInterceptorImpl
+import com.platform6ix.platform6ix.services.CurrentWeatherDataSourceImpl
 import com.platform6ix.platform6ix.services.WeatherService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -35,11 +38,16 @@ class CurrentFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(CurrentViewModel::class.java)
         // TODO: Use the ViewModel
-        val apiService = WeatherService()
+        val apiService = WeatherService(ConnectivityInterceptorImpl(this.requireContext()))
+
+        val currentWeatherDataSource = CurrentWeatherDataSourceImpl(apiService)
+
+        currentWeatherDataSource.downloadedCurrentWeather.observe(viewLifecycleOwner, Observer {
+            textViewHome.text = it.toString()
+        })
 
         GlobalScope.launch(Dispatchers.Main) {
-            val currentWeatherResponse = apiService.getCurrentWeather("Miami", "en").await()
-            textViewHome.text = currentWeatherResponse.currentWeatherEntry.toString()
+            currentWeatherDataSource.fetchCurrentWeather("Miami", "en")
         }
     }
 
