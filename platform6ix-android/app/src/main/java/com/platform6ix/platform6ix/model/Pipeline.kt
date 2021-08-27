@@ -1,4 +1,4 @@
-package com.platform6ix.platform6ix.models
+package com.platform6ix.platform6ix.model
 
 /**
  * Created by Das on 2021-08-24.

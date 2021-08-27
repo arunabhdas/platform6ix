@@ -38,7 +38,7 @@ class CurrentFragment : Fragment() {
         val apiService = RetrofitService()
 
         GlobalScope.launch(Dispatchers.Main) {
-            val currentWeatherResponse = apiService.getCurrentWeather("Toronto", "en").await()
+            val currentWeatherResponse = apiService.getCurrentWeather("Miami", "en").await()
             textViewHome.text = currentWeatherResponse.currentWeatherEntry.toString()
         }
     }
