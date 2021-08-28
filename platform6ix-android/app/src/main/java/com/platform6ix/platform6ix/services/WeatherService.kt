@@ -17,6 +17,9 @@ import retrofit2.http.Query
 const val API_KEY = "7c0e16b199f4e835e5fbb0fe03f7319c"
 const val BASE_URL = " http://api.weatherstack.com/"
 
+private const val TMDB_BASE_URL = "https://api.themoviedb.org/3/"
+private const val TMDB_API_KEY = "TYPE_YOUR_TMDb_API_KEY_HERE"
+
 // http://api.weatherstack.com/current?access_key=7c0e16b199f4e835e5fbb0fe03f7319c&query=Toronto
 
 interface WeatherService {
