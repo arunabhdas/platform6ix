@@ -2,7 +2,6 @@ package com.platform6ix.platform6ix.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.strictmode.NonSdkApiUsedViolation
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.AppBarConfiguration

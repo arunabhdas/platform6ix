@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.platform6ix.platform6ix.model.CurrentWeatherResponse
-import io.reactivex.internal.util.HalfSerializer.onError
 import kotlinx.coroutines.*
 
 class CurrentViewModel() : ViewModel() {
