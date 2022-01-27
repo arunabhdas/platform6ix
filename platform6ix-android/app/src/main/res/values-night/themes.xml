@@ -4,13 +4,22 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/niftyapp_azure</item>
         <item name="colorPrimaryVariant">@color/nifty_azure</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorOnPrimary">@color/nifty_orange_pantone</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/nifty_mango</item>
         <item name="colorSecondaryVariant">@color/nifty_orange_pantone</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnSecondary">@color/nifty_theme_orange</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.NiftyApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.NiftyApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.NiftyApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
