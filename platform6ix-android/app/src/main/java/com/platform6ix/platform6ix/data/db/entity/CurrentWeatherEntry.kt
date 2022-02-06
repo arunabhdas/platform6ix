@@ -1,16 +1,12 @@
-package com.platform6ix.platform6ix.model
+package com.platform6ix.platform6ix.data.db.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-
-data class CurrentWeatherResponse(
-    @SerializedName("current")
-    val currentWeatherEntry: CurrentWeatherEntry,
-    val location: Location,
-    val request: Request
-)
+/**
+ * Created by Das on 2022-02-06.
+ */
 
 const val CURRENT_WEATHER_ID = 0
 @Entity(tableName = "current_weather")
@@ -44,25 +40,3 @@ data class CurrentWeatherEntry(
     @PrimaryKey(autoGenerate = false)
     var id: Int = CURRENT_WEATHER_ID
 }
-
-data class Location(
-    val country: String,
-    val lat: String,
-    val localtime: String,
-    @SerializedName("localtime_epoch")
-    val localtimeEpoch: Int,
-    val lon: String,
-    val name: String,
-    val region: String,
-    @SerializedName("timezone_id")
-    val timezoneId: String,
-    @SerializedName("utc_offset")
-    val utcOffset: String
-)
-
-data class Request(
-    val language: String,
-    val query: String,
-    val type: String,
-    val unit: String
-)
