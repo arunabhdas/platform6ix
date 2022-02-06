@@ -42,12 +42,12 @@ class CurrentFragment : Fragment() {
 
         val currentWeatherDataSource = CurrentWeatherDataSourceImpl(apiService)
 
-        currentWeatherDataSource.downloadedCurrentWeather.observe(viewLifecycleOwner, Observer {
-            textViewHome.text = it.toString()
+        currentWeatherDataSource.downloadedCurrentWeather.observe(viewLifecycleOwner, Observer { weather ->
+            textViewHome.text = weather.toString()
         })
 
         GlobalScope.launch(Dispatchers.Main) {
-            currentWeatherDataSource.fetchCurrentWeather("Miami", "en")
+            currentWeatherDataSource.fetchCurrentWeather("Toronto", "en")
         }
     }
 
