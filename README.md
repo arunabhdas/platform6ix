@@ -4,7 +4,7 @@
 # Screenshots
 <a href="https://github.com/arunabhdas/platform6ix/blob/main/screenshots/screenshot_current_fragment_1.png"><img src="https://github.com/arunabhdas/platform6ix/blob/main/screenshots/screenshot_current_fragment_1.png" align="left" height="250"></a>
 
-## 
+<hr/>
 
 # References
 
