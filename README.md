@@ -3,7 +3,7 @@
 
 # Screenshots
 
-![Screenshot1](https://github.com/arunabhdas/platform6ix/blob/main/screenshots/screenshot_current_fragment_1.png){:height="250px"}
+![Screenshot1](https://github.com/arunabhdas/platform6ix/blob/main/screenshots/screenshot_current_fragment_1.png){:height="250px"}.
 
 # References
 
