@@ -2,7 +2,7 @@
 
 
 # Screenshots
-![Screenshot 1](https://github.com/arunabhdas/platform6ix/blob/main/screenshots/screenshot_current_fragment_1.png | width="250")
+<a href=""><img src="https://github.com/arunabhdas/platform6ix/blob/main/screenshots/screenshot_current_fragment_1.png" align="left" height="250"></a>
 
 
 # References
