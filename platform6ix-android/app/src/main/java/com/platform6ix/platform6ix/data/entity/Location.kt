@@ -1,4 +1,4 @@
-package com.platform6ix.platform6ix.data.db.entity
+package com.platform6ix.platform6ix.data.entity
 
 import com.google.gson.annotations.SerializedName
 

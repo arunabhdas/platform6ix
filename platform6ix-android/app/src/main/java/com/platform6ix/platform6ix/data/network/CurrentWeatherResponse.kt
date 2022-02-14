@@ -1,10 +1,8 @@
 package com.platform6ix.platform6ix.model
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
-import com.platform6ix.platform6ix.data.db.entity.CurrentWeatherEntry
-import com.platform6ix.platform6ix.data.db.entity.Location
+import com.platform6ix.platform6ix.data.entity.CurrentWeatherEntry
+import com.platform6ix.platform6ix.data.entity.Location
 
 
 data class CurrentWeatherResponse(

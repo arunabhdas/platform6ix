@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.Observer
+import com.bumptech.glide.Glide
 import com.platform6ix.platform6ix.R
 import com.platform6ix.platform6ix.network.ConnectivityInterceptorImpl
 import com.platform6ix.platform6ix.services.CurrentWeatherDataSourceImpl
@@ -23,14 +25,20 @@ class CurrentFragment : Fragment() {
     }
 
     private lateinit var viewModel: CurrentViewModel
-    private lateinit var textViewHome: TextView
+    private lateinit var textViewCondition: TextView
+    private lateinit var imageViewConditionIcon: ImageView
+    private lateinit var textViewTemperature: TextView
+    private lateinit var textViewFeelsLikeTemperature: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_current, container, false)
-        textViewHome = root.findViewById(R.id.textViewHome)
+        textViewCondition = root.findViewById(R.id.textView_condition)
+        imageViewConditionIcon = root.findViewById(R.id.imageView_condition_icon)
+        textViewTemperature = root.findViewById(R.id.textView_temperature)
+        textViewFeelsLikeTemperature = root.findViewById(R.id.textView_feels_like_temperature)
         return root
     }
 
@@ -43,11 +51,23 @@ class CurrentFragment : Fragment() {
         val currentWeatherDataSource = CurrentWeatherDataSourceImpl(apiService)
 
         currentWeatherDataSource.downloadedCurrentWeather.observe(viewLifecycleOwner, Observer { weather ->
-            textViewHome.text = weather.toString()
+            textViewCondition.text = weather.currentWeatherEntry.weatherDescriptions.joinToString(separator = ",")
+            textViewTemperature.text = weather.currentWeatherEntry.temperature.toString()
+            textViewFeelsLikeTemperature.text = weather.location.name.toString()
+
+            Glide
+                .with(this)
+                .load(weather.currentWeatherEntry.weatherIcons.first())
+                .centerCrop()
+                .placeholder(R.drawable.ic_weather_sunny)
+                .into(imageViewConditionIcon);
+
         })
 
+
+
         GlobalScope.launch(Dispatchers.Main) {
-            currentWeatherDataSource.fetchCurrentWeather("Toronto", "en")
+            currentWeatherDataSource.fetchCurrentWeather("San Francisco", "en")
         }
     }
 

@@ -1,4 +1,4 @@
-package com.platform6ix.platform6ix.data.db.entity
+package com.platform6ix.platform6ix.data.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
